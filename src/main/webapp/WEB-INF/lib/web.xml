@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    
+    <display-name>AMC/Warranty/Status Tracking System</display-name>
+    
+    <!-- Welcome Files -->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <!-- Login Servlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.amc.servlets.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Logout Servlet -->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.amc.servlets.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- AMC Servlet -->
+    <servlet>
+        <servlet-name>AMCServlet</servlet-name>
+        <servlet-class>com.amc.servlets.AMCServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AMCServlet</servlet-name>
+        <url-pattern>/AMCServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Get Control Number Servlet -->
+    <servlet>
+        <servlet-name>GetControlNumberServlet</servlet-name>
+        <servlet-class>com.amc.servlets.GetControlNumberServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetControlNumberServlet</servlet-name>
+        <url-pattern>/GetControlNumberServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Get Address List Servlet -->
+    <servlet>
+        <servlet-name>GetAddressListServlet</servlet-name>
+        <servlet-class>com.amc.servlets.GetAddressListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAddressListServlet</servlet-name>
+        <url-pattern>/GetAddressListServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Session Configuration -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    
+    <!-- Error Pages -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/404.html</location>
+    </error-page>
+    
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error/500.html</location>
+    </error-page>
+</web-app>
